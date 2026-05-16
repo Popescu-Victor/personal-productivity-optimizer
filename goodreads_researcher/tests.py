@@ -45,9 +45,10 @@ def scrape(user_link):
     password_field.send_keys(LOGIN_PASSWORD)
     password_field.send_keys(Keys.RETURN)
 
-    review_page = f'https://www.goodreads.com/review/list/{HANDLE}?utf8=%E2%9C%93&sort=rating&view=reviews&per_page=100'
-    driver.get(review_page)
+    driver.get(str(user_link) + s)
+    
     time.sleep(2)
+    link = driver.find_element(By.XPATH, "//a[contains(@href, 'rating&view=reviews')]")
 
     elements = driver.find_elements(By.CSS_SELECTOR, ".field.author a")
     authors = [element.text for element in elements]
@@ -56,4 +57,4 @@ def scrape(user_link):
 
     driver.quit()
 
-scrape(HANDLE)
+print(f'https://www.goodreads.com/review/list/{HANDLE}?utf8=%E2%9C%93&sort=rating&view=reviews&per_page=100')
