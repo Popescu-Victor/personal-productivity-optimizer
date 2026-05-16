@@ -51,8 +51,12 @@ def scrape(user_link):
 
     elements = driver.find_elements(By.CSS_SELECTOR, ".field.author a")
     authors = [element.text for element in elements]
-    print(authors)
 
+    from collections import Counter
+
+    counts = Counter(authors)
+    for author, count in counts.most_common():
+        print(f"{author}: {count}")
 
     driver.quit()
 

@@ -57,4 +57,10 @@ def scrape(user_link):
 
     driver.quit()
 
-print(f'https://www.goodreads.com/review/list/{HANDLE}?utf8=%E2%9C%93&sort=rating&view=reviews&per_page=100')
+list_of_authors = ['author', 'Heller, Zoë', 'Dostoevsky, Fyodor', 'Desai, Anita', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Carter, Angela', 'Bolaño, Roberto', 'Calvino, Italo', 'Maupassant, Guy de', 'Le Guin, Ursula K.', 'Cervantes Saavedra, Miguel de', 'Rich, Adrienne', 'Tagore, Rabindranath', 'Anonymous', 'Henry, O.', 'Xinran', 'Shaw, George Bernard', 'Kamio, Yōko', 'Kamio, Yōko', 'Clarke, Arthur C.', 'Ray, Satyajit', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Takaya, Natsuki', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Kamio, Yōko', 'Hrabal, Bohumil', 'Vollmann, William T.', 'Takaya, Natsuki', 'Borges, Jorge Luis', 'Dumas, Alexandre', 'Lorde, Audre', 'Bond, Ruskin', 'Bandyopadhyay, Sekhar', 'Tolstoy, Leo', 'Takaya, Natsuki', 'Blyton, Enid', 'Cather, Willa', 'Shaw, George Bernard', 'Ray, Satyajit', 'Lorde, Audre', 'Morrison, Toni', 'Maupassant, Guy de', 'Phillips, Susan Elizabeth', 'Roy, Arundhati', 'Baldwin, James', 'Le Guin, Ursula K.', 'McCullers, Carson', 'Andersen, Hans Christian', 'Toole, John Kennedy', 'Yoshimoto, Banana', 'Nin, Anaïs', 'Atwood, Margaret', 'Rushdie, Salman', 'Tennyson, Alfred', 'Sophocles', 'Doyle, Arthur Conan', 'McCarthy, Cormac', 'Orwell, George', 'Hatori, Bisco', 'Verne, Jules', 'Calvino, Italo', 'Takaya, Natsuki', 'Coetzee, J.M.', 'Verne, Jules', 'Plath, Sylvia', 'Okri, Ben', 'Rilke, Rainer Maria', 'Doyle, Arthur Conan', 'Blyton, Enid', 'Wallace, David Foster', 'Doyle, Arthur Conan', 'Takaya, Natsuki', 'Hergé']
+
+from collections import Counter
+
+counts = Counter(list_of_authors)
+for author, count in counts.most_common():
+    print(f"{author}: {count}")
