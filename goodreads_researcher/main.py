@@ -47,6 +47,13 @@ def scrape(user_link):
     time.sleep(2)
     link = driver.find_element(By.XPATH, "//a[contains(@href, 'rating&view=reviews')]")
     link.click()
+    time.sleep(2)
+
+    elements = driver.find_elements(By.CSS_SELECTOR, ".field.author a")
+    authors = [element.text for element in elements]
+    print(authors)
+
+
     driver.quit()
 
 scrape(HANDLE)
