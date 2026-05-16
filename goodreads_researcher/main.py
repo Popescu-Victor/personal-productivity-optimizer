@@ -17,10 +17,11 @@ def input_handle():
 dotenv.load_dotenv(r'C:\Users\roman\Desktop\ERQL Github\productivity\personal-productivity-optimizer\goodreads_researcher\goodreads.env')
 LOGIN_EMAIL = os.getenv("LOGIN_EMAIL")
 LOGIN_PASSWORD = os.getenv("LOGIN_PASSWORD")
+HANDLE = os.getenv('HANDLE')
 
 print(str(LOGIN_EMAIL) + " " + str(LOGIN_PASSWORD))
 
-def scrape():
+def scrape(user_link):
 
     driver = webdriver.Edge() 
     driver.get("https://www.goodreads.com/user/sign_in")
@@ -41,8 +42,6 @@ def scrape():
     password_field.send_keys(LOGIN_PASSWORD)
     password_field.send_keys(Keys.RETURN)
 
-    user_link = input_handle()
-
     driver.get(user_link)
     
     time.sleep(2)
@@ -50,4 +49,4 @@ def scrape():
     link.click()
     driver.quit()
 
-scrape()
+scrape(HANDLE)
