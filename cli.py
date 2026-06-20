@@ -25,5 +25,21 @@ def main():
         sys.exit(1)
     else:
         command = raw_input[0].strip()
-        if command == "ask":
-            call_gemini_api(raw_input[1])
+        if command == "ask": # "ask" calls on Gemini Flash api
+            context = " Give a short and simple answer"
+            call_gemini_api(str(raw_input[1:]) + context)
+        if command == "scrape":
+            pass
+        if command == "cron":
+            pass
+        if command == "search":
+            pass
+        if command == "correlation":
+            pass
+        if command == "anon":
+            from tkinter import filedialog
+            folder_path = filedialog.askdirectory(title="Select a folder")
+
+
+
+main()
