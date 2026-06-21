@@ -4,6 +4,7 @@ import sys
 import argparse
 from google import genai
 
+# REQL - PowerShell tool for automating work and personal tasks.
 
 def call_gemini_api(prompt):
     api_key = dotenv.get_key(dotenv.find_dotenv(), "GEMINI_API_KEY")
@@ -36,9 +37,19 @@ def main():
             pass
         if command == "correlation":
             pass
+        if command == "search":
+            pass
+        if command == "thm":
+            pass
+        if command == "git":
+            pass
+        if command == "ilias":
+            pass
         if command == "anon":
             from tkinter import filedialog
             folder_path = filedialog.askdirectory(title="Select a folder")
+            for file in folder_path:
+                pass # randomize names
 
 
 
