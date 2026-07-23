@@ -4,7 +4,6 @@ import sys
 import argparse
 from google import genai
 
-# REQL - PowerShell tool for automating work and personal tasks.
 
 def call_gemini_api(prompt):
     api_key = dotenv.get_key(dotenv.find_dotenv(), "GEMINI_API_KEY")
